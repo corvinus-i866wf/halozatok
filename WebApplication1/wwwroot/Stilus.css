@@ -1,0 +1,45 @@
+﻿body{
+
+}
+div{
+    margin:10px;
+    padding :20px;
+    border: solid 1px fuchsia;
+    border-radius: 25px;
+}
+h1 h2{
+    text-align:center;
+}
+a{
+    padding: 10px;
+    margin:20px;
+    border-radius:25px;
+    background-color:blue;
+    color:white;
+}
+a:hover{
+    background-color:fuchsia;
+}
+img{
+    display:block;
+    margin:auto;
+}
+span {
+    font-weight: bold;
+    font-style: italic;
+    color: fuchsia;
+    font-size: 40px;
+}
+#listak{
+    background-color:lightgray;
+
+
+}
+.feher{
+    background-color:white;
+    width:100px;
+    border-radius:25px;
+}
+.sorrendi{
+    font-style:italic;
+}
