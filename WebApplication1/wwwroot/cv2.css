@@ -1,0 +1,130 @@
+﻿* {
+    box-sizing: border-box;
+    margin:0;
+}
+
+body {
+    font-weight: bold;
+    text-align: center;
+    background-color:azure;
+}
+
+#Article,
+#Aside,
+#footer,
+#Header,
+#nav {
+    padding: 20px;
+}
+#Main{
+    border:dotted 3px blue;
+    
+}
+
+#Header {
+    background-color: tomato;
+}
+
+#nav {
+    background-color: lightblue;
+    display: flex;
+}
+
+    #nav a {
+        text-decoration: none;
+        color: black;
+        flex: 1 1 auto;
+    }
+
+#Article {
+    background-color: gold;
+    text-align: left;
+}
+
+#aside {
+    background-color: lightgreen;
+}
+
+#footer {
+    background-color: lightcoral;
+    border: dashed 3px black
+}
+
+@media only screen and (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 1500px;
+    }
+
+    #Main {
+        display: flex;
+    }
+
+    #nav, #Header {
+        order: 1;
+    }
+    #aside {
+        flex: 1 1 25%;
+        order: 0;
+    }
+    #Article {
+        flex: 1 1 75%;
+        order: 1;
+    }
+    span{
+        font-size: 20px;
+    }
+}
+div {
+    margin: 10px;
+    padding: 20px;
+    border: solid 1px fuchsia;
+    border-radius: 25px;
+}
+
+h1 h2 {
+    text-align: center;
+}
+
+a {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 25px;
+    background-color: lightgray;
+    color: white;
+}
+
+    a:hover {
+        background-color: fuchsia;
+    }
+
+img {
+    
+    display: block;
+    margin: auto;
+    width: 120px;
+    height :120px;
+}
+
+span {
+    font-weight: bold;
+    font-style: italic;
+    color: fuchsia;
+    font-size: 40px;
+}
+
+#listak {
+    background-color: lightgray;
+}
+
+.feher {
+    background-color: white;
+    width: auto;
+    border-radius: 25px;
+}
+
+.sorrendi {
+    font-style: italic;
+}
