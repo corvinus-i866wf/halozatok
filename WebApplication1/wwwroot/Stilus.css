@@ -21,8 +21,10 @@ a:hover{
     background-color:fuchsia;
 }
 img{
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
+    width: 120px;
+    height: 120px;
 }
 span {
     font-weight: bold;

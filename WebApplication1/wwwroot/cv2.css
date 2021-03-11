@@ -8,6 +8,11 @@ body {
     text-align: center;
     background-color:azure;
 }
+#Header {
+    background-color: tomato;
+    border: double 2px black;
+    border-radius:0px;
+}
 
 #Article,
 #Aside,
@@ -21,9 +26,7 @@ body {
     
 }
 
-#Header {
-    background-color: tomato;
-}
+
 
 #nav {
     background-color: lightblue;
@@ -47,7 +50,8 @@ body {
 
 #footer {
     background-color: lightcoral;
-    border: dashed 3px black
+    border: dashed 3px black;
+    
 }
 
 @media only screen and (min-width: 800px) {
@@ -62,7 +66,10 @@ body {
         display: flex;
     }
 
-    #nav, #Header {
+    #Header{
+        order : -1;
+    }
+    #nav {
         order: 1;
     }
     #aside {
@@ -127,4 +134,7 @@ span {
 
 .sorrendi {
     font-style: italic;
+}
+header{
+    background-color:white;
 }

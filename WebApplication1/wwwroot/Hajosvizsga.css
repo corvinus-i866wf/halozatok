@@ -1,0 +1,90 @@
+﻿body{
+    height:100%;
+    background-color:lightgray;
+}
+#egesz{
+    height:100%;
+    width:100%;
+    display:flex;
+   
+    flex-direction:column;
+}
+#tartalom{
+    display:flex;
+    flex-direction:row;
+    flex-grow:1;
+}
+#kerdes {
+    padding:10px;
+    text-align:center;
+    font-size:18px;
+    margin: 1px;
+}
+#kep {
+    
+    align-self:flex-end;
+    flex-shrink:0;
+    flex-grow:0;
+    max-width:100%;
+}
+#valaszok {
+    padding: 10px;
+    
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+#valasz1 {
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 8px;
+}
+#valasz2 {
+    border: 2px solid blue;
+    border-radius: 20px;
+    padding: 8px;
+}
+#valasz3 {
+    border: 2px solid fuchsia;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+#nav {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    
+   
+}
+div .kattintható {
+    border-radius:10px;
+    background-color: white;
+    padding: 15px;
+}
+div {
+  border:1px solid black;
+  border-collapse:collapse;
+}
+.kattintható:hover{
+    background-color:darkgray;
+}
+.kerdeskatt:hover{
+    background-color:darkgray;
+}
+.kerdeskattjó:hover{
+    background-color:green;
+}
+.kerdeskattrossz:hover{
+    background-color:red;
+}
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+    #tartalom{
+        flex-direction:column;
+    }
+    #kep{
+        width:100%;
+    }
+}
