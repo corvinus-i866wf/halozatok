@@ -25,33 +25,33 @@ function kérdésMegjelen(k) {
         elem.innerHTML = kerdes[k]["answer" + i]
     }
 
-    if (document.getElementById("kep").src != "") {
-        document.getElementById("kep").src = kerdes[k].image
+    if (document.getElementById("keptag").src != "") {
+        document.getElementById("keptag").src = kerdes[k].image
     }
    
     
 }
 function Léptetelore() {
-    if (helyzet == kerdes.length + 1) {
+    if (helyzet == kerdes.length-1) {
         helyzet = 0;
-        letöltés();
+        kérdésMegjelen(helyzet);
         clear();
     }
     else {
         helyzet++;
-        letöltés();
+        kérdésMegjelen(helyzet);
         clear();
     }
 }
 function Leptethatra() {
     if (helyzet == 0) {
         helyzet = kerdes.length - 1;
-        letöltés();
+        kérdésMegjelen(helyzet);
         clear();
     }
     else {
         helyzet--;
-        letöltés();
+        kérdésMegjelen(helyzet);
         clear();
     }
 }
