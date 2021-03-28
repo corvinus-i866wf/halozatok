@@ -72,10 +72,10 @@ div {
     background-color:darkgray;
 }
 .kerdeskattjó:hover{
-    background-color:green;
+    background-color:darkgray;
 }
 .kerdeskattrossz:hover{
-    background-color:red;
+    background-color:darkgray;
 }
 @media only screen and (max-width: 600px) {
     body {

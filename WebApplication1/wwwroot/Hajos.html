@@ -2,10 +2,12 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link href="Hajosvizsga.css" rel="stylesheet" >
+    <link href="Hajosvizsga.css" rel="stylesheet">
+    <script src="hetedik.js"> </script>
     <title></title>
 </head>
 <body>
+    
     <div id="egesz">
         <div id="kerdes">
             Kérdés
@@ -13,19 +15,19 @@
         <div id="tartalom">
 
             <div id="valaszok">
-                <div id="valasz1" class="kerdeskatt">a</div>
-                <div id="valasz2" class="kerdeskattjó">b</div>
-                <div id="valasz3" class="kerdeskattrossz" >c</div>
+                <div id="valasz1" class="kerdeskatt" onclick="ellenoriz(1)">a</div>
+                <div id="valasz2" class="kerdeskattjó" onclick="ellenoriz(2)">b</div>
+                <div id="valasz3" class="kerdeskattrossz" onclick="ellenoriz(3)" >c</div>
             </div>
             <div id="kep">
-                <img src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" alt="Alternate Text" />
+                <img id="keptag" src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" alt="Alternate Text" />
             </div>
 
 
         </div>
         <div id="nav">
-            <div class="kattintható">Vissza</div>
-            <div class="kattintható">Előre</div>
+            <div class="kattintható" onmousedown="Leptethatra()">Vissza</div>
+            <div class="kattintható" onmousedown="Léptetelore()">Előre</div>
         </div>
 
     </div>
