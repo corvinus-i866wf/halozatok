@@ -23,9 +23,8 @@ namespace WebApplication1.Controllers
             if (kérdések == null) return BadRequest("Nincs ilyen sorszámú kérdés");
             return new JsonResult(kérdések);
         }
-    }
-    public class BoatController1 : ControllerBase
-    {
+    
+    
         [HttpGet]
         [Route("questions/{sorszám}")]
         public ActionResult M2(int sorszám)
@@ -39,5 +38,18 @@ namespace WebApplication1.Controllers
 
             return new JsonResult(kérdés);
         }
+    
+    
+        [HttpGet]
+        [Route("questions/count")]
+        public int M4() 
+        {
+            HajostesztContext context = new HajostesztContext();
+            int kérdésekSzáma = context.Questions.Count();
+
+            return kérdésekSzáma;
+            
+        }
+
     }
 }
