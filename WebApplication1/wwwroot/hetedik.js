@@ -50,7 +50,7 @@ function kérdésBetöltés(questionNumber, destination) {
                 if (displayedQuestion == undefined && destination == 0) {
                     displayedQuestion = 0;
                     kérdésMegjelenítés();
-                    //timeoutHandler = setTimeout(Léptetelore, 3000);
+                    timeoutHandler = setTimeout(Léptetelore, 3000);
                 }
             }
         );
@@ -65,7 +65,7 @@ function init() {
     }
 
    
-    for (var i = 0; i < questionsInHotList; i++) {
+   for (var i = 0; i < questionsInHotList; i++) {
         kérdésBetöltés(nextQuestion, i);
         nextQuestion++;
     }
@@ -78,13 +78,14 @@ function init() {
     if (localStorage.getItem("nextQuestion")) {
         nextQuestion = parseInt(localStorage.getItem("nextQuestion"))
     }
-    if (hotList.length===0 ) {
+    if (hotList.length<0 ) {
         for (var i = 0; i < questionsInHotList; i++) {
             kérdésBetöltés(nextQuestion, i)
             nextQuestion++;
         }
     } else {
         kérdésMegjelenítés();
+        
     }
     
     
@@ -135,6 +136,7 @@ function Léptetelore() {
     if (displayedQuestion == questionsInHotList) displayedQuestion = 0;
     kérdésMegjelenítés();
     clear();
+    timeoutHandler = setTimeout(Léptetelore, 3000);
     
     
 }
