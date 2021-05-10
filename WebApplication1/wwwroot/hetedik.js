@@ -56,13 +56,13 @@ function kérdésBetöltés(questionNumber, destination) {
         );
 }
 function init() {
-   for (var i = 0; i < questionsInHotList; i++) {
+   /*for (var i = 0; i < questionsInHotList; i++) {
         let q = {
             question: {},
             goodAnswers: 0
         }
         hotList[i] = q;
-    }
+    }*/
 
    
    for (var i = 0; i < questionsInHotList; i++) {
@@ -78,7 +78,7 @@ function init() {
     if (localStorage.getItem("nextQuestion")) {
         nextQuestion = parseInt(localStorage.getItem("nextQuestion"))
     }
-    if (hotList.length<0 ) {
+    if (hotList.length===0 ) {
         for (var i = 0; i < questionsInHotList; i++) {
             kérdésBetöltés(nextQuestion, i)
             nextQuestion++;
