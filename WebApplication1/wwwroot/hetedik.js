@@ -30,6 +30,41 @@ function letöltés() {
         })
         .then(data => kérdésMegjelenítés(data));
 }  */
+function init() {
+    for (var i = 0; i < questionsInHotList; i++) {
+        let q = {
+            question: {},
+            goodAnswers: 0
+        }
+        hotList[i] = q;
+    }
+
+
+
+    if (localStorage.getItem("hotList")) {
+        hotList = JSON.parse(localStorage.getItem("hotList"));
+    }
+    if (localStorage.getItem("displayedQuestion")) {
+        displayedQuestion = parseInt(localStorage.getItem("displayedQuestion"));
+    }
+    if (localStorage.getItem("nextQuestion")) {
+        nextQuestion = parseInt(localStorage.getItem("nextQuestion"))
+    }
+    if (!localStorage.getItem("hotList")) {
+        console.log("nem localStorage")
+        for (var i = 0; i < questionsInHotList; i++) {
+            kérdésBetöltés(nextQuestion, i)
+            nextQuestion++;
+        }
+    } else {
+        console.log("localstorage");
+        kérdésMegjelenítés();
+       
+    }
+
+
+
+}
 function kérdésBetöltés(questionNumber, destination) {
     fetch(`/questions/${questionNumber}`)
         .then(
@@ -55,42 +90,7 @@ function kérdésBetöltés(questionNumber, destination) {
             }
         );
 }
-function init() {
-   /*for (var i = 0; i < questionsInHotList; i++) {
-        let q = {
-            question: {},
-            goodAnswers: 0
-        }
-        hotList[i] = q;
-    }*/
 
-   
-   for (var i = 0; i < questionsInHotList; i++) {
-        kérdésBetöltés(nextQuestion, i);
-        nextQuestion++;
-    }
-    if (localStorage.getItem("hotList")) {
-        hotList =JSON.parse(localStorage.getItem("hotList"));
-    }
-    if (localStorage.getItem("displayedQuestion")) {
-        displayedQuestion = parseInt(localStorage.getItem("displayedQuestion"));
-    }
-    if (localStorage.getItem("nextQuestion")) {
-        nextQuestion = parseInt(localStorage.getItem("nextQuestion"))
-    }
-    if (hotList.length===0 ) {
-        for (var i = 0; i < questionsInHotList; i++) {
-            kérdésBetöltés(nextQuestion, i)
-            nextQuestion++;
-        }
-    } else {
-        kérdésMegjelenítés();
-        
-    }
-    
-    
-
-}
 function válaszfeldolgozás(válasz) {
     if (!válasz.ok) {
         console.error(`Hibás válasz: ${response.status}`)
@@ -126,7 +126,7 @@ function kérdésMegjelenítés() {
     document.getElementById("valasz1").innerText = kerdes.answer1
     document.getElementById("valasz2").innerText = kerdes.answer2
     document.getElementById("valasz3").innerText = kerdes.answer3
-    document.getElementById("kep").src = "https://szoft1.comeback.hu/hajo/" + kerdes.image;
+    document.getElementById("keptag").src = "https://szoft1.comeback.hu/hajo/" + kerdes.image;
     jovalasz = kerdes.correctAnswer;
     
 }
